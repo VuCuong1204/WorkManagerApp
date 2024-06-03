@@ -30,9 +30,9 @@ class HomeActivity : AppCompatActivity() {
         }
 
         lifecycleScope.launchWhenCreated {
-            viewModel.users.collectLatest {
-                userAdapter.submitData(it)
-            }
+//            viewModel.users.collectLatest {
+//                userAdapter.submitData(it)
+//            }
         }
     }
 }

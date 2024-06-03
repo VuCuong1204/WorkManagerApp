@@ -5,11 +5,14 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import androidx.paging.cachedIn
-import kotlinx.coroutines.flow.Flow
+import androidx.paging.rxjava2.cachedIn
+import androidx.paging.rxjava3.cachedIn
+import androidx.paging.rxjava3.flowable
+import io.reactivex.rxjava3.core.Flowable
+import vn.example.workmanager.pagingrx.UserPagingRxSource
 
 class HomeViewModel : ViewModel() {
-    val users: Flow<PagingData<User>> = Pager(PagingConfig(20)) {
-        UserPagingSource()
-    }.flow.cachedIn(viewModelScope)
+    val users: Flowable<PagingData<User>> = Pager(PagingConfig(20)) {
+        UserPagingRxSource()
+    }.flowable.cachedIn(viewModelScope)
 }

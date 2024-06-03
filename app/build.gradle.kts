@@ -46,4 +46,11 @@ dependencies {
     implementation("com.squareup.picasso:picasso:2.71828")
 
     implementation("androidx.paging:paging-runtime-ktx:3.3.0")
+
+
+    // optional - RxJava2 support
+    implementation("androidx.paging:paging-rxjava2-ktx:3.3.0")
+
+    // optional - RxJava3 support
+    implementation("androidx.paging:paging-rxjava3:3.3.0")
 }
